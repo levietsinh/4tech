@@ -1,21 +1,24 @@
 <template>
   <main>
     <Header />
-    <Greeting/>
+    <Greeting />
+    <AboutUs />
   </main>
 </template>
 
 <script>
 import Header from '../partials/header/Header.vue'
-import Greeting from "./../greeting/Greeting.vue"
+import Greeting from './../greeting/Greeting.vue'
+import AboutUs from './../about-us/AboutUs.vue'
 export default {
   name: 'HomeComponent',
   components: {
     Header,
-    Greeting
+    Greeting,
+    AboutUs,
   },
 }
 </script>
 <style lang="scss" scoped>
-@import "./Home.scss";
+@import './Home.scss';
 </style>

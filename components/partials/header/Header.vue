@@ -7,11 +7,8 @@
         alt="4Tech"
       />
     </b-navbar-brand>
-
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
     <b-collapse id="nav-collapse" is-nav>
-      <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto header-nav">
         <b-nav-item href="#">
           {{ $t('header.aboutUs') }}
@@ -25,19 +22,29 @@
         <b-nav-item href="#">
           {{ $t('header.contactUs') }}
         </b-nav-item>
-        <b-nav-item>
-            <img src="~/assets/images/vietnam.svg">
-          <b-nav-item-dropdown class="header-lang" right>
-            <b-dropdown-item>
-              <nuxt-link :to="switchLocalePath('vi')">
-                <img src="~/assets/images/vietnam.svg" />
-                <span>Tiếng Việt</span>
-              </nuxt-link>
-            </b-dropdown-item>
-            <b-dropdown-item>
-              <nuxt-link :to="switchLocalePath('en')">
-                <img src="~/assets/images/united-states.svg" />
-                <span>English</span>
+        <b-nav-item class="header-lang">
+          <b-nav-item-dropdown class="header-lang__dropdown" right no-caret>
+            <template #button-content>
+              <span class="d-flex">
+                <img
+                  :src="
+                    require(`@/assets/images/${
+                      currentLang === 'en' ? 'united-states' : 'vietnam'
+                    }.svg`)
+                  " />
+                <img class="ml-2" src="~/assets/images/arrow-down.svg"
+              /></span>
+            </template>
+            <b-dropdown-item v-for="flag in flags" :key="flag.key">
+              <nuxt-link :to="switchLocalePath(flag.key)">
+                <span class="header-lang__tick"
+                  ><img
+                    src="~/assets/images/tick.svg"
+                    v-show="currentLang === flag.key"
+                /></span>
+
+                <img :src="require(`@/assets/images/${flag.image}.svg`)" />
+                <span>{{ flag.value }}</span>
               </nuxt-link>
             </b-dropdown-item>
           </b-nav-item-dropdown>
@@ -48,7 +55,26 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'HeaderComponent',
+  data() {
+    return {
+      currentLang: this.$i18n.locale,
+      flags: [
+        {
+          key: 'vi',
+          image: 'vietnam',
+          value: 'Tiếng Việt',
+        },
+        {
+          key: 'en',
+          image: 'united-states',
+          value: 'English',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>

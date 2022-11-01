@@ -5,6 +5,7 @@
   left: 0;
   width: 100%;
   padding: 20px 80px;
+  z-index: 9999;
 
   &-logo {
     width: 109px;
@@ -27,27 +28,41 @@
     }
   }
   &-lang {
-    color: $white-color;
-
-    ul.dropdown-menu-right {
-      padding: 8px;
-
-      li {
-        margin: 0;
-
-        a {
-          display: flex;
-          align-items: center;
-
-          img {
-            margin-right: 8px;
+    >a {
+      display: flex;
+    }
+    &__dropdown {
+  
+      ul {
+        padding: 8px!important;
+  
+        li {
+          margin: 0;
+  
+          a {
+            display: flex;
+            align-items: center;
+            color: $back-color;
+            font-weight: 700;
+            font-size: 10px;
+            &.dropdown-item {
+              padding: 0;
+            }
+  
+            img {
+              margin-right: 8px;
+            }
+          }
+  
+          &+li {
+            border-top: 1px solid $gray-color;
           }
         }
-
-        &+li {
-          border-top: 1px solid $gray-color;
-        }
       }
+    }
+    &__tick {
+      width: 30px;
+      display: block;
     }
   }
 }
