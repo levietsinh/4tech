@@ -17,6 +17,9 @@ $ npm run start
 $ npm run generate
 ```
 
+# deploy to Github
+$ npm run deploy
+
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
 ## Special Directories

@@ -1,0 +1,53 @@
+.header {
+  background-color: transparent !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 80px;
+
+  &-logo {
+    width: 109px;
+  }
+
+  &-nav {
+    font-size: 14px;
+    font-weight: bold;
+
+    li {
+      @include flex-center;
+
+      &+li {
+        margin-left: 84px;
+      }
+
+      a.nav-link {
+        color: $white-color;
+      }
+    }
+  }
+  &-lang {
+    color: $white-color;
+
+    ul.dropdown-menu-right {
+      padding: 8px;
+
+      li {
+        margin: 0;
+
+        a {
+          display: flex;
+          align-items: center;
+
+          img {
+            margin-right: 8px;
+          }
+        }
+
+        &+li {
+          border-top: 1px solid $gray-color;
+        }
+      }
+    }
+  }
+}
