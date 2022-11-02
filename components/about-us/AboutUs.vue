@@ -24,8 +24,11 @@
       </b-col>
     </b-row>
     <b-row class="about-image">
-      <b-col cols="12">
-
+      <b-col cols="12" class="about-image-col">
+        <div class="about-image-global">
+          <img src="@/assets/images/map.png" />
+        </div>
+        <img class="about-image-angle" src="@/assets/images/angle.png" />
       </b-col>
     </b-row>
   </b-container>

@@ -2,7 +2,7 @@
   margin-top: 10vh;
   &-left {
     h2 {
-      font-family: "Playfair";
+      font-family: 'Playfair';
       font-weight: 900;
       font-size: 60px;
       line-height: 100%;
@@ -33,7 +33,7 @@
     ul {
       li {
         display: flex;
-        &+li {
+        & + li {
           margin-top: 40px;
         }
         img {
@@ -48,8 +48,48 @@
             margin-bottom: 8px;
             font-weight: bold;
           }
+          &-des {
+            font-size: 14px;
+            color: $gray-boulder;
+          }
         }
       }
     }
+  }
+  &-image {
+    &-col {
+      height: 90vh;
+      margin-top: 64px;
+      position: relative;
+    }
+    &-global {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-angle {
+      height: fit-content;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      animation: bobbing 3s infinite ease;
+      -webkit-animation: bobbing 3s infinite ease;
+    }
+  }
+}
+@keyframes bobbing {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 16px;
+  }
+  100% {
+    top: 0;
   }
 }
