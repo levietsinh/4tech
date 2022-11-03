@@ -89,6 +89,22 @@ export default {
     },
   },
   partners: {
-    title: "Đối tác",
-  }
+    title: 'Đối tác',
+  },
+  footer: {
+    address: {
+      title: 'Địa chỉ',
+      addressUS:
+        'Valletta Buildings, South Street, Valletta - VLT 1103 Malta, Mỹ',
+      addressVN:
+        'Số 20 đường Phan Đăng Lưu, quận Hải Châu, thành phố Đà Nẵng, Việt Nam',
+      phoneNumber: '(+1) 555-0108-000 hoặc (+236) 555-0108',
+    },
+    subscribe: {
+      title: 'Theo dõi',
+      text: 'Đăng ký nhận bản tin của chúng tôi và là người đầu tiên biết về các cập nhật của chúng tôi',
+    },
+    placeholder: 'Email',
+    copyright: '2017 Copyright. Policy.',
+  },
 }

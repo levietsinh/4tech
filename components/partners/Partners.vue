@@ -3,10 +3,19 @@
     <h2 class="partners-title">{{ $t('partners.title') }}</h2>
     <div class="partners-carousel">
       <VueSlickCarousel v-bind="settings">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
+        <template #nextArrow>
+          <div class="custom-arrow">
+            <img src="@/assets/images/arrow-right.png" />
+          </div>
+        </template>
+        <div v-for="partner of 7" :key="partner">
+          <img :src="require(`@/assets/images/partner-${partner}.png`)" />
+        </div>
+        <template #prevArrow>
+          <div class="custom-arrow">
+            <img src="@/assets/images/arrow-left.png" />
+          </div>
+        </template>
       </VueSlickCarousel>
     </div>
   </div>
@@ -14,8 +23,9 @@
 
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
-// optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+
 export default {
   name: 'PartnersComponent',
   components: {
@@ -24,12 +34,12 @@ export default {
   data() {
     return {
       settings: {
-        centerMode: true,
-        centerPadding: '20px',
-        focusOnSelect: true,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        arrows: true,
         infinite: true,
-        slidesToShow: 3,
         speed: 500,
+        slidesToShow: 5,
       },
     }
   },

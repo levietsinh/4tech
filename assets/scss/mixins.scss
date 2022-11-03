@@ -1,32 +1,30 @@
-@import "./common.scss";
-
 @font-face {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   src: url(~/assets/fonts/Montserrat-Regular.ttf);
 }
 @font-face {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   src: url(~/assets/fonts/Montserrat-Bold.ttf);
   font-weight: bold;
 }
 @font-face {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   src: url(~/assets/fonts/Montserrat-Bold.ttf);
   font-style: italic;
 }
 @font-face {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   src: url(~/assets/fonts/Montserrat-Bold.ttf);
   font-weight: 500;
 }
 @font-face {
-  font-family: "Playfair";
+  font-family: 'Playfair';
   src: url(~/assets/fonts/PlayfairDisplay-Black.ttf);
   font-weight: 900;
 }
 
 * {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
 }
 
 @mixin flex-center {

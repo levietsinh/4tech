@@ -1,11 +1,10 @@
 .header {
   background-color: transparent !important;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   padding: 20px 80px;
-  z-index: 9999;
 
   &-logo {
     width: 109px;
@@ -18,7 +17,7 @@
     li {
       @include flex-center;
 
-      &+li {
+      & + li {
         margin-left: 84px;
       }
 
@@ -28,13 +27,12 @@
     }
   }
   &-lang {
-    >a {
+    > a {
       display: flex;
     }
     &__dropdown {
-
       ul {
-        padding: 8px!important;
+        padding: 8px !important;
 
         li {
           margin: 0;
@@ -54,7 +52,7 @@
             }
           }
 
-          &+li {
+          & + li {
             border-top: 1px solid $gray-color;
           }
         }

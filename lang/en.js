@@ -89,6 +89,22 @@ export default {
     },
   },
   partners: {
-    title: "Our Partners"
-  }
+    title: 'Our Partners',
+  },
+  footer: {
+    address: {
+      title: 'Address',
+      addressUS:
+        'Valletta Buildings, South Street, Valletta - VLT 1103 Malta, US',
+      addressVN:
+        '20 Phan Dang Luu street, Hai Chau District, Danang city, Vietnam',
+      phoneNumber: '(+1) 555-0108-000 or (+236) 555-0108',
+    },
+    subscribe: {
+      title: 'Subscribe',
+      text: 'Subscribe to our newsletter and be the first to know about our updates',
+    },
+    placeholder: 'Enter your email',
+    copyright: '2017 Copyright. Policy.',
+  },
 }

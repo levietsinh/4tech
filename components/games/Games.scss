@@ -1,4 +1,5 @@
 .games {
+  overflow: hidden;
   &-header {
     margin-bottom: 80px;
     text-align: center;
@@ -9,13 +10,39 @@
       line-height: 100%;
       margin-bottom: 24px;
     }
-    p {
+    > p {
       font-size: 14px;
       line-height: calc(20 / 14);
       padding: 0 28%;
     }
   }
   .game-item {
-    border-radius: 8px;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    & + .game-item {
+      margin-top: 40px;
+    }
+    img {
+      border-radius: 8px;
+      max-width: 100%;
+    }
+  }
+  &-text {
+    color: $white-color;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    text-align: start;
+    padding: 0 32px;
+    h4 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 14px;
+      line-height: calc(20 / 14);
+    }
   }
 }

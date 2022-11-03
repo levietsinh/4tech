@@ -1,5 +1,6 @@
 <template>
   <div class="greeting">
+    <Header />
     <img src="~/assets/images/fairy-man.png" class="greeting-fairy" />
     <div class="greeting-content">
       <h2 class="greeting-headline">{{ $t('greeting.headline') }}</h2>
@@ -38,8 +39,11 @@
 </template>
 
 <script>
+import Header from './../../components/partials/header/Header.vue'
+
 export default {
   name: 'GreetingComponent',
+  components: { Header },
   data() {
     return {
       countDownDate: new Date('Jan 1, 2023 00:00:00').getTime(),
