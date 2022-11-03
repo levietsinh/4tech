@@ -15,7 +15,7 @@
         align-self="start"
         class="games-header"
       >
-        <div v-for="game in games.slice(0, 3)" :key="game.image">
+        <div v-for="game in games.slice(0, 3)" :key="game.image" class="game-item">
           <img :src="require(`@/assets/images/${game.image}.png`)" />
         </div>
       </b-col>
@@ -27,7 +27,7 @@
         align-self="end"
         class="games-header"
       >
-        <div v-for="game in games.slice(3, 6)" :key="game.image">
+        <div v-for="game in games.slice(3, 6)" :key="game.image" class="game-item">
           <img :src="require(`@/assets/images/${game.image}.png`)" /></div
       ></b-col>
       <b-col
@@ -38,7 +38,7 @@
         align-self="start"
         class="games-header"
       >
-        <div v-for="game in games.slice(6, 9)" :key="game.image">
+        <div v-for="game in games.slice(6, 9)" :key="game.image" class="game-item">
           <img :src="require(`@/assets/images/${game.image}.png`)" /></div
       ></b-col>
       <b-col
@@ -49,7 +49,7 @@
         align-self="end"
         class="games-header"
       >
-        <div v-for="game in games.slice(-3)" :key="game.image">
+        <div v-for="game in games.slice(-3)" :key="game.image" class="game-item">
           <img :src="require(`@/assets/images/${game.image}.png`)" /></div
       ></b-col>
     </b-row>

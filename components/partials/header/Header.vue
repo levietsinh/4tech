@@ -39,8 +39,8 @@
               <nuxt-link :to="switchLocalePath(flag.key)">
                 <span class="header-lang__tick"
                   ><img
-                    src="~/assets/images/tick.svg"
                     v-show="currentLang === flag.key"
+                    src="~/assets/images/tick.svg"
                 /></span>
 
                 <img :src="require(`@/assets/images/${flag.image}.svg`)" />
