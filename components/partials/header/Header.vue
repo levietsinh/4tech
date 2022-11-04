@@ -43,7 +43,29 @@
           <img src="~/assets/images/close.png" />
         </b-navbar-toggle>
       </div>
-      <b-navbar-nav class="ml-auto header-nav">
+      <b-navbar-nav v-if="isMobile" class="ml-auto header-nav">
+        <b-nav-item @click="scrollToView('aboutEl')">
+          <b-navbar-toggle target="nav-collapse">
+            {{ $t('header.aboutUs') }}
+          </b-navbar-toggle>
+        </b-nav-item>
+        <b-nav-item @click="scrollToView('gamesEl')">
+          <b-navbar-toggle target="nav-collapse">
+            {{ $t('header.games') }}
+          </b-navbar-toggle>
+        </b-nav-item>
+        <b-nav-item @click="scrollToView('partnersEl')">
+          <b-navbar-toggle target="nav-collapse">
+            {{ $t('header.partner') }}
+          </b-navbar-toggle>
+        </b-nav-item>
+        <b-nav-item @click="scrollToView('footerEl')">
+          <b-navbar-toggle target="nav-collapse">
+            {{ $t('header.contactUs') }}
+          </b-navbar-toggle>
+        </b-nav-item>
+      </b-navbar-nav>
+      <b-navbar-nav v-else class="ml-auto header-nav">
         <b-nav-item @click="scrollToView('aboutEl')">
           {{ $t('header.aboutUs') }}
         </b-nav-item>
@@ -56,7 +78,7 @@
         <b-nav-item @click="scrollToView('footerEl')">
           {{ $t('header.contactUs') }}
         </b-nav-item>
-        <b-nav-item v-if="!isMobile" class="header-lang">
+        <b-nav-item class="header-lang">
           <b-nav-item-dropdown class="header-lang__dropdown" right no-caret>
             <template #button-content>
               <span class="d-flex">

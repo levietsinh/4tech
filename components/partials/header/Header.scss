@@ -74,14 +74,14 @@
     }
     button.navbar-toggler.collapsed {
       border: none;
-      padding: 0;
+      padding-left: 0;
     }
     &-close {
       display: flex;
       justify-content: space-between;
       padding: 16px;
       .navbar-toggler.not-collapsed {
-        padding: 0;
+        padding-left: 0;
       }
     }
     &-lang {
@@ -124,8 +124,14 @@
         }
 
         a.nav-link {
-          color: $black-color;
-          text-transform: uppercase;
+          padding: 0;
+          .navbar-toggler {
+            text-transform: uppercase;
+            color: $black-color;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 0;
+          }
         }
       }
     }
