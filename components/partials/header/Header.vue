@@ -11,7 +11,7 @@
       <img src="~/assets/images/menu.png" />
     </b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
-      <div class="header-close">
+      <div v-if="isMobile" class="header-close">
         <b-nav-item class="header-lang__mobile">
           <b-nav-item-dropdown class="header-lang__dropdown" left no-caret>
             <template #button-content>

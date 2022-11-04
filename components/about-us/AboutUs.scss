@@ -69,6 +69,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      img {
+        width: 100%;
+      }
     }
     &-angle {
       height: fit-content;
@@ -120,6 +123,11 @@
       height: 72vh;
       &-col {
         padding: 0;
+      }
+      &-global {
+        img {
+          width: 100%;
+        }
       }
       &-angle {
         width: 84vw;

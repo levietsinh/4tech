@@ -10,7 +10,7 @@
       src="~/assets/images/arrow-circle-up.png"
       class="home-arrow"
       :class="{ 'home-arrow-reverse': scrollY > 0 }"
-      @click="handleScrollButton"
+      @click="handleScrollButton()"
     />
   </main>
 </template>
@@ -36,14 +36,13 @@ export default {
   data() {
     return {
       scrollY: 0,
-      footerEl: "",
+      footerEl: '',
     }
   },
   mounted() {
-    // eslint-disable-next-line nuxt/no-globals-in-created
     window.addEventListener('scroll', this.handleScroll)
     this.$nextTick(() => {
-      this.footerEl = document.querySelector(".footer");
+      this.footerEl = document.querySelector('.footer')
     })
   },
   beforeDestroy() {
@@ -51,13 +50,17 @@ export default {
   },
   methods: {
     handleScrollButton() {
-      if(this.scrollY > 0) {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
+      if (this.scrollY > 0) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          })
+        }, 100)
       } else {
-        this.footerEl.scrollIntoView({behavior: 'smooth'})
+        setTimeout(() => {
+          this.footerEl.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
       }
     },
     handleScroll() {
