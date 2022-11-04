@@ -1,7 +1,7 @@
 .home {
   &-arrow {
     position: fixed;
-    right: 3vw;
+    right: 2vw;
     cursor: pointer;
     transition: .6s;
     animation: zoom 2s infinite ease-in-out;
@@ -14,14 +14,22 @@
 
 @keyframes zoom {
   0% {
-    bottom: 8vh;
+    bottom: 7vh;
   }
 
   50% {
-    bottom: calc(8vh + 6px);
+    bottom: calc(7vh + 6px);
   }
 
   100% {
-    bottom: 8vh;
+    bottom: 7vh;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home {
+    &-arrow {
+      right: 22px;
+    }
   }
 }

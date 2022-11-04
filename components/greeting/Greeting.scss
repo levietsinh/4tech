@@ -17,7 +17,7 @@
     width: 758px;
     margin: auto;
     position: absolute;
-    bottom: 7vh;
+    bottom: 10vh;
     left: 0;
     right: 0;
 
@@ -46,18 +46,21 @@
 
     &__item {
       flex: 1;
+
       .countdown-time {
         font-size: 16px;
         font-weight: bold;
       }
     }
+
     .countdown-value {
       font-weight: 900;
       font-family: "Playfair";
       color: $black-color;
       font-size: 60px;
-      line-height: 64px;
+      line-height: calc(64 / 60);
     }
+
     .countdown-time {
       display: block;
       margin-top: 20px;
@@ -93,6 +96,66 @@
     img {
       width: 20px;
       cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .greeting {
+    overflow: hidden;
+    height: 150vh;
+    &-headline {
+      font-size: 40px;
+      margin-bottom: 38px;
+    }
+
+    &-content {
+      width: 100%;
+      padding: 0 16px;
+      bottom: unset;
+      top: 120px;
+
+      p.greeting-sub {
+        font-size: 12px;
+        margin-bottom: 16px;
+        margin-top: 40px;
+        padding: 0;
+      }
+
+    }
+
+    &-email {
+      width: 100%;
+    }
+
+    &-fairy {
+      width: 100%;
+      left: 13vw;
+    }
+
+    &-countdown {
+      height: 118px;
+      padding: 24px 26px;
+
+      &__item {
+        .countdown-time {
+          font-size: 12px;
+        }
+      }
+
+      .countdown-value {
+        font-size: 36px;
+      }
+
+      .countdown-time {
+        margin-top: 8px;
+      }
+
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
     }
   }
 }

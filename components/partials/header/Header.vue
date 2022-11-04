@@ -10,16 +10,16 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto header-nav">
-        <b-nav-item href="#">
+        <b-nav-item @click="scrollToView('aboutEl')">
           {{ $t('header.aboutUs') }}
         </b-nav-item>
-        <b-nav-item href="#">
+        <b-nav-item @click="scrollToView('gamesEl')">
           {{ $t('header.games') }}
         </b-nav-item>
-        <b-nav-item href="#">
+        <b-nav-item @click="scrollToView('partnersEl')">
           {{ $t('header.partner') }}
         </b-nav-item>
-        <b-nav-item href="#">
+        <b-nav-item @click="scrollToView('footerEl')">
           {{ $t('header.contactUs') }}
         </b-nav-item>
         <b-nav-item class="header-lang">
@@ -59,6 +59,10 @@ export default {
   name: 'HeaderComponent',
   data() {
     return {
+      footerEl: "",
+      aboutEl: "",
+      gamesEl: "",
+      partnersEl: "",
       currentLang: this.$i18n.locale,
       flags: [
         {
@@ -74,6 +78,19 @@ export default {
       ],
     }
   },
+  mounted() {
+    this.$nextTick(() => {
+      this.aboutEl = document.querySelector(".about");
+      this.footerEl = document.querySelector(".footer");
+      this.gamesEl = document.querySelector(".games");
+      this.partnersEl = document.querySelector(".partners");
+    })
+  },
+  methods: {
+    scrollToView(element) {
+      this[element].scrollIntoView({behavior: 'smooth'});
+    }
+  }
 }
 </script>
 

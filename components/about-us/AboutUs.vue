@@ -4,10 +4,16 @@
       <b-col cols="12" md="6" class="about-col about-left">
         <h2>{{ $t('aboutUs.title') }}</h2>
         <p>{{ $t('aboutUs.subText') }}</p>
-        <h3>600M+</h3>
-        <h4>{{ $t('aboutUs.users') }}</h4>
-        <h3>135+</h3>
-        <h4>{{ $t('aboutUs.games') }}</h4>
+        <div class="about-statistic">
+          <div class="about-statistic-type">
+            <h3>600M+</h3>
+            <h4>{{ $t('aboutUs.users') }}</h4>
+          </div>
+          <div class="about-statistic-type">
+            <h3>135+</h3>
+            <h4>{{ $t('aboutUs.games') }}</h4>
+          </div>
+        </div>
       </b-col>
       <b-col cols="12" md="6" class="about-col about-right">
         <ul>

@@ -13,7 +13,7 @@
         order="1"
         order-md="1"
         align-self="start"
-        class="games-header pb-5"
+        class="games-header games-list-1"
       >
         <div
           v-for="game in games.slice(0, 3)"
@@ -33,7 +33,7 @@
         order="3"
         order-md="2"
         align-self="end"
-        class="games-header"
+        class="games-header games-list-2"
       >
         <div
           v-for="game in games.slice(3, 6)"
@@ -53,7 +53,7 @@
         order="2"
         order-md="3"
         align-self="start"
-        class="games-header"
+        class="games-header games-list-3"
       >
         <div
           v-for="game in games.slice(6, 9)"

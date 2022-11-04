@@ -143,9 +143,10 @@ a:focus {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: gray; 
+  background: gray;
   border-radius: 10px;
 }
+

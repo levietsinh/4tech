@@ -3,20 +3,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: $white-color;
+
   &-col {
     padding: 10vh 0;
   }
+
   &-logo {
     margin-bottom: 44px;
+
     img {
       width: 168px;
     }
   }
+
   &-social {
-    img + img {
+    img+img {
       margin-left: 32px;
     }
   }
+
   &-copyright {
     text-align: center;
     background-color: $black-color;
@@ -24,20 +29,25 @@
     padding: 28px 0;
     color: $white-color;
   }
+
   &-title {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 40px;
   }
+
   &-address {
     margin-bottom: 48px;
+
     span {
       margin-right: 12px;
     }
   }
+
   &-text {
     font-size: 14px;
   }
+
   &-phone {
     @include flex-center;
   }
@@ -63,6 +73,7 @@
       &:focus {
         outline: unset;
       }
+
       &::placeholder {
         color: $white-color;
       }
@@ -71,6 +82,23 @@
     img {
       width: 20px;
       cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    &-col {
+      padding: 38px 0;
+    }
+    &-logo,  &-social {
+      text-align: center;
+    }
+    &-address {
+      margin-bottom: 0;
+    }
+    &-subscribe {
+      margin-bottom: 24px;
     }
   }
 }
