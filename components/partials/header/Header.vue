@@ -25,22 +25,20 @@
                 <img class="ml-2" src="~/assets/images/arrow-down-black.svg"
               /></span>
             </template>
-            <b-dropdown-item
-              v-for="flag in flags"
-              :key="flag.key"
-              @click="showMenu = false"
-            >
-              <nuxt-link :to="switchLocalePath(flag.key)">
-                <span class="header-lang__tick"
-                  ><img
-                    v-show="currentLang === flag.key"
-                    src="~/assets/images/tick.svg"
-                /></span>
+            <b-navbar-toggle target="nav-collapse" @click="showMenu = false">
+              <b-dropdown-item v-for="flag in flags" :key="flag.key">
+                <nuxt-link :to="switchLocalePath(flag.key)">
+                  <span class="header-lang__tick"
+                    ><img
+                      v-show="currentLang === flag.key"
+                      src="~/assets/images/tick.svg"
+                  /></span>
 
-                <img :src="require(`@/assets/images/${flag.image}.svg`)" />
-                <span>{{ flag.value }}</span>
-              </nuxt-link>
-            </b-dropdown-item>
+                  <img :src="require(`@/assets/images/${flag.image}.svg`)" />
+                  <span>{{ flag.value }}</span>
+                </nuxt-link>
+              </b-dropdown-item>
+            </b-navbar-toggle>
           </b-nav-item-dropdown>
         </b-nav-item>
         <b-navbar-toggle target="nav-collapse" @click="showMenu = false">
