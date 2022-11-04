@@ -7,8 +7,42 @@
         alt="4Tech"
       />
     </b-navbar-brand>
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-navbar-toggle target="nav-collapse">
+      <img src="~/assets/images/menu.png" />
+    </b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
+      <div class="header-close">
+        <b-nav-item class="header-lang__mobile">
+          <b-nav-item-dropdown class="header-lang__dropdown" left no-caret>
+            <template #button-content>
+              <span class="d-flex">
+                <img
+                  :src="
+                    require(`@/assets/images/${
+                      currentLang === 'en' ? 'united-states' : 'vietnam'
+                    }.svg`)
+                  " />
+                <img class="ml-2" src="~/assets/images/arrow-down-black.svg"
+              /></span>
+            </template>
+            <b-dropdown-item v-for="flag in flags" :key="flag.key">
+              <nuxt-link :to="switchLocalePath(flag.key)">
+                <span class="header-lang__tick"
+                  ><img
+                    v-show="currentLang === flag.key"
+                    src="~/assets/images/tick.svg"
+                /></span>
+
+                <img :src="require(`@/assets/images/${flag.image}.svg`)" />
+                <span>{{ flag.value }}</span>
+              </nuxt-link>
+            </b-dropdown-item>
+          </b-nav-item-dropdown>
+        </b-nav-item>
+        <b-navbar-toggle target="nav-collapse">
+          <img src="~/assets/images/close.png" />
+        </b-navbar-toggle>
+      </div>
       <b-navbar-nav class="ml-auto header-nav">
         <b-nav-item @click="scrollToView('aboutEl')">
           {{ $t('header.aboutUs') }}
@@ -22,7 +56,7 @@
         <b-nav-item @click="scrollToView('footerEl')">
           {{ $t('header.contactUs') }}
         </b-nav-item>
-        <b-nav-item class="header-lang">
+        <b-nav-item v-if="!isMobile" class="header-lang">
           <b-nav-item-dropdown class="header-lang__dropdown" right no-caret>
             <template #button-content>
               <span class="d-flex">
@@ -59,10 +93,11 @@ export default {
   name: 'HeaderComponent',
   data() {
     return {
-      footerEl: "",
-      aboutEl: "",
-      gamesEl: "",
-      partnersEl: "",
+      isMobile: false,
+      footerEl: '',
+      aboutEl: '',
+      gamesEl: '',
+      partnersEl: '',
       currentLang: this.$i18n.locale,
       flags: [
         {
@@ -80,17 +115,25 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.aboutEl = document.querySelector(".about");
-      this.footerEl = document.querySelector(".footer");
-      this.gamesEl = document.querySelector(".games");
-      this.partnersEl = document.querySelector(".partners");
+      this.onResize()
+      window.addEventListener('resize', this.onResize)
+      this.aboutEl = document.querySelector('.about')
+      this.footerEl = document.querySelector('.footer')
+      this.gamesEl = document.querySelector('.games')
+      this.partnersEl = document.querySelector('.partners')
     })
   },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
+  },
   methods: {
+    onResize() {
+      this.isMobile = window.innerWidth < 821
+    },
     scrollToView(element) {
-      this[element].scrollIntoView({behavior: 'smooth'});
-    }
-  }
+      this[element].scrollIntoView({ behavior: 'smooth' })
+    },
+  },
 }
 </script>
 

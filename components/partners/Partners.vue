@@ -33,6 +33,7 @@ export default {
   },
   data() {
     return {
+      windowWidth: 0,
       settings: {
         autoplay: true,
         autoplaySpeed: 2500,
@@ -42,6 +43,25 @@ export default {
         slidesToShow: 5,
       },
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.onResize()
+      window.addEventListener('resize', this.onResize)
+    })
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
+  },
+  methods: {
+    onResize() {
+      this.windowWidth = window.innerWidth
+      this.settings = {
+        ...this.settings,
+        slidesToShow: this.windowWidth < 821 ? 3 : 5,
+      }
+    },
   },
 }
 </script>
