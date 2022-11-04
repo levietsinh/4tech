@@ -7,7 +7,7 @@
         alt="4Tech"
       />
     </b-navbar-brand>
-    <b-navbar-toggle target="nav-collapse">
+    <b-navbar-toggle target="nav-collapse" @click="showMenu = true">
       <img src="~/assets/images/menu.png" />
     </b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
@@ -25,7 +25,11 @@
                 <img class="ml-2" src="~/assets/images/arrow-down-black.svg"
               /></span>
             </template>
-            <b-dropdown-item v-for="flag in flags" :key="flag.key">
+            <b-dropdown-item
+              v-for="flag in flags"
+              :key="flag.key"
+              @click="showMenu = false"
+            >
               <nuxt-link :to="switchLocalePath(flag.key)">
                 <span class="header-lang__tick"
                   ><img
@@ -39,7 +43,7 @@
             </b-dropdown-item>
           </b-nav-item-dropdown>
         </b-nav-item>
-        <b-navbar-toggle target="nav-collapse">
+        <b-navbar-toggle target="nav-collapse" @click="showMenu = false">
           <img src="~/assets/images/close.png" />
         </b-navbar-toggle>
       </div>
@@ -116,6 +120,7 @@ export default {
   data() {
     return {
       isMobile: false,
+      showMenu: false,
       footerEl: '',
       aboutEl: '',
       gamesEl: '',
@@ -135,12 +140,19 @@ export default {
       ],
     }
   },
+  watch: {
+    showMenu: {
+      handler(value) {
+        document.body.style.overflow = value ? 'hidden' : ''
+      },
+    },
+  },
   mounted() {
     this.$nextTick(() => {
       this.onResize()
       window.addEventListener('resize', this.onResize)
       this.aboutEl = document.querySelector('.about')
-      this.footerEl = document.querySelector('.footer')
+      this.footerEl = document.querySelector('.footer-copyright')
       this.gamesEl = document.querySelector('.games')
       this.partnersEl = document.querySelector('.partners')
     })
@@ -153,6 +165,7 @@ export default {
       this.isMobile = window.innerWidth < 821
     },
     scrollToView(element) {
+      this.showMenu = false
       this[element].scrollIntoView({ behavior: 'smooth' })
     },
   },

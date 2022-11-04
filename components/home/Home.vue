@@ -42,7 +42,7 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
     this.$nextTick(() => {
-      this.footerEl = document.querySelector('.footer')
+      this.footerEl = document.querySelector('.footer-copyright')
     })
   },
   beforeDestroy() {
