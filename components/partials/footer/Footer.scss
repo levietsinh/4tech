@@ -46,6 +46,7 @@
 
   &-text {
     font-size: 14px;
+    line-height: calc(20 / 14);
   }
 
   &-phone {
@@ -96,7 +97,7 @@
       text-align: center;
     }
     &-address {
-      margin-bottom: 0;
+      margin-bottom: 24px;
     }
     &-subscribe {
       margin-bottom: 24px;

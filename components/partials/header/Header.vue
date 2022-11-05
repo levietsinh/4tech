@@ -26,16 +26,27 @@
               /></span>
             </template>
             <b-navbar-toggle target="nav-collapse" @click="showMenu = false">
-              <b-dropdown-item v-for="flag in flags" :key="flag.key">
-                <nuxt-link :to="switchLocalePath(flag.key)">
-                  <span class="header-lang__tick"
+              <b-dropdown-item
+                v-for="flag in flags"
+                :key="flag.key"
+                @click="showMenu = false"
+              >
+                <nuxt-link
+                  :to="switchLocalePath(flag.key)"
+                  @click="showMenu = false"
+                >
+                  <span class="header-lang__tick" @click="showMenu = false"
                     ><img
                       v-show="currentLang === flag.key"
                       src="~/assets/images/tick.svg"
+                      @click="showMenu = false"
                   /></span>
 
-                  <img :src="require(`@/assets/images/${flag.image}.svg`)" />
-                  <span>{{ flag.value }}</span>
+                  <img
+                    :src="require(`@/assets/images/${flag.image}.svg`)"
+                    @click="showMenu = false"
+                  />
+                  <span @click="showMenu = false">{{ flag.value }}</span>
                 </nuxt-link>
               </b-dropdown-item>
             </b-navbar-toggle>

@@ -26,6 +26,8 @@
       margin-top: 98px;
       margin-bottom: 32px;
       padding: 0 140px;
+      font-size: 18px;
+      line-height: calc(22 / 18);
     }
   }
 
@@ -106,6 +108,7 @@
     height: 150vh;
     &-headline {
       font-size: 40px;
+      line-height: calc(50 / 40);
       margin-bottom: 38px;
     }
 

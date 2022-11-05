@@ -13,6 +13,7 @@
       font-size: 14px;
       color: $gray-boulder;
       margin-bottom: 80px;
+      line-height: calc(20 / 14);
     }
     h3 {
       color: $blue-color;
@@ -52,6 +53,7 @@
           &-des {
             font-size: 14px;
             color: $gray-boulder;
+            line-height: calc(20 / 14);
           }
         }
       }
@@ -130,8 +132,8 @@
         }
       }
       &-angle {
-        width: 84vw;
-        height: fit-content;
+        width: 80vw;
+        height: auto;
       }
     }
   }
