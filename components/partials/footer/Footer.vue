@@ -7,9 +7,15 @@
             <img src="~/assets/images/4tech-logo.svg" alt="4tech" />
           </div>
           <div class="footer-social">
-            <img src="~/assets/images/twitter.svg" />
-            <img src="~/assets/images/facebook.svg" />
-            <img src="~/assets/images/linked.svg" />
+            <a href="https://www.twitter.com/" target="_blank"
+              ><img src="~/assets/images/twitter.svg"
+            /></a>
+            <a href="https://www.facebook.com/" target="_blank">
+              <img src="~/assets/images/facebook.svg"
+            /></a>
+            <a href="https://www.linkedin.com/" target="_blank">
+              <img src="~/assets/images/linked.svg"
+            /></a>
           </div>
         </b-col>
         <b-col cols="12" md="4" class="footer-col footer-contact px-3">

@@ -17,8 +17,11 @@
   }
 
   &-social {
-    img + img {
-      margin-left: 32px;
+    a {
+      cursor: pointer;
+      & + a {
+        margin-left: 32px;
+      }
     }
   }
 

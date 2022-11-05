@@ -6,7 +6,9 @@
         <p>{{ $t('aboutUs.subText') }}</p>
         <div class="about-statistic">
           <div class="about-statistic-type">
-            <h3>600M+</h3>
+            <h3>
+              <span>600</span><span class="about-milions">M</span><span>+</span>
+            </h3>
             <h4>{{ $t('aboutUs.users') }}</h4>
           </div>
           <div class="about-statistic-type">
